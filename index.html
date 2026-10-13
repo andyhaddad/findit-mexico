@@ -221,13 +221,25 @@ function buscarProductos() {
       categoriaSeleccionada + " mujer México"
     );
 
-    resultados.innerHTML =
-      "<h2>¡Vamos de compras! 🛍️</h2>" +
-      "<p>Explora productos y compara precios.</p>" +
-      '<a href="https://www.google.com/search?tbm=shop&q=' +
-      busqueda +
-      '" target="_blank" rel="noopener noreferrer">Ver productos y precios →</a>';
-  }
+    
+const enlace = document.createElement("a");
+enlace.href = "https://www.google.com/search?tbm=shop&q=" + busqueda;
+enlace.target = "_blank";
+enlace.rel = "noopener noreferrer";
+enlace.textContent = "Ver más productos y precios →";
+
+let contenedor = document.getElementById("enlace-shopping");
+
+if (!contenedor) {
+  contenedor = document.createElement("div");
+  contenedor.id = "enlace-shopping";
+  contenedor.style.textAlign = "center";
+  contenedor.style.margin = "25px 0";
+  resultados.prepend(contenedor);
+}
+
+contenedor.replaceChildren(enlace);
+
 
   resultados.scrollIntoView({
     behavior: "smooth",
@@ -236,6 +248,20 @@ function buscarProductos() {
 }
 
  
+function filtrarProductos() {
+  const limite = document.getElementById("filtro-precio").value;
+  const productos = document.querySelectorAll(".producto-card");
+
+  productos.forEach(producto => {
+    const precio = Number(producto.dataset.precio);
+
+    producto.style.display =
+      limite === "todos" || precio <= Number(limite)
+        ? ""
+        : "none";
+  });
+}
+
 </script>
 
 </body>
