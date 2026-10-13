@@ -117,8 +117,15 @@
 
 <script>
 function buscarProductos() {
-  document.getElementById("resultados").innerHTML =
+  const resultados = document.getElementById("resultados");
+
+  resultados.innerHTML =
     "<h2>Próximamente 💗</h2><p>Estamos preparando tus resultados.</p>";
+
+  resultados.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 }
 </script>
 
