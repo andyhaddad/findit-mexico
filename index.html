@@ -93,10 +93,14 @@
       preview.hidden = false;
     });
 
-    function choose(category) {
-      document.getElementById("status").textContent =
-        "Categoría seleccionada: " + category;
-    }
+    let categoriaSeleccionada = "";
+
+function choose(category) {
+  categoriaSeleccionada = category;
+
+  document.getElementById("status").textContent =
+    "Categoría seleccionada: " + category;
+}
   </script>
 
 <div style="text-align:center; margin:30px 0;">
