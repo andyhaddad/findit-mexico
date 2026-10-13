@@ -51,6 +51,62 @@
       cursor: pointer;
     }
     #status { margin-top: 20px; }
+ 
+.resultados-findit {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.resultados-findit h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.filtros-findit {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.filtros-findit select {
+  padding: 12px;
+  border: 1px solid #e3d6df;
+  border-radius: 20px;
+  background: white;
+  color: #302638;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 22px;
+}
+
+.producto-card {
+  background: white;
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 4px 18px rgba(48,38,56,0.08);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0;
+}
+
+.producto-precio {
+  font-size: 22px;
+  font-weight: bold;
+  color: #302638;
+}
+
   </style>
 </head>
 <body>
