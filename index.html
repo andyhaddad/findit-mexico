@@ -208,38 +208,38 @@ function choose(category) {
 </section>
 
 
-<script>
 
+<script>
 function buscarProductos() {
   const resultados = document.getElementById("resultados");
 
   if (!categoriaSeleccionada) {
-    resultados.innerHTML =
-      "<p>💗 Primero selecciona una categoría.</p>";
-  } else {
-    const busqueda = encodeURIComponent(
-      categoriaSeleccionada + " mujer México"
-    );
+    document.getElementById("status").textContent =
+      "💗 Primero selecciona una categoría.";
+    return;
+  }
 
-    
-const enlace = document.createElement("a");
-enlace.href = "https://www.google.com/search?tbm=shop&q=" + busqueda;
-enlace.target = "_blank";
-enlace.rel = "noopener noreferrer";
-enlace.textContent = "Ver más productos y precios →";
+  const busqueda = encodeURIComponent(
+    categoriaSeleccionada + " mujer México"
+  );
 
-let contenedor = document.getElementById("enlace-shopping");
+  const enlace = document.createElement("a");
+  enlace.href = "https://www.google.com/search?tbm=shop&q=" + busqueda;
+  enlace.target = "_blank";
+  enlace.rel = "noopener noreferrer";
+  enlace.textContent = "Ver más productos y precios →";
 
-if (!contenedor) {
-  contenedor = document.createElement("div");
-  contenedor.id = "enlace-shopping";
-  contenedor.style.textAlign = "center";
-  contenedor.style.margin = "25px 0";
-  resultados.prepend(contenedor);
-}
+  let contenedor = document.getElementById("enlace-shopping");
 
-contenedor.replaceChildren(enlace);
+  if (!contenedor) {
+    contenedor = document.createElement("div");
+    contenedor.id = "enlace-shopping";
+    contenedor.style.textAlign = "center";
+    contenedor.style.margin = "25px 0";
+    resultados.prepend(contenedor);
+  }
 
+  contenedor.replaceChildren(enlace);
 
   resultados.scrollIntoView({
     behavior: "smooth",
@@ -247,7 +247,6 @@ contenedor.replaceChildren(enlace);
   });
 }
 
- 
 function filtrarProductos() {
   const limite = document.getElementById("filtro-precio").value;
   const productos = document.querySelectorAll(".producto-card");
@@ -261,8 +260,8 @@ function filtrarProductos() {
         : "none";
   });
 }
-
 </script>
+
 
 </body>
 </html>
