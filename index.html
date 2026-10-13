@@ -173,7 +173,38 @@ function choose(category) {
 </div>
 
 
+
 <section id="resultados" class="resultados-findit">
+  <h2>Encuentra tu estilo por menos ♡</h2>
+
+  <div class="filtros-findit">
+    <select id="filtro-precio" onchange="filtrarProductos()">
+      <option value="todos">Todos los precios</option>
+      <option value="1000">Hasta $1,000 MXN</option>
+      <option value="1500">Hasta $1,500 MXN</option>
+      <option value="2000">Hasta $2,000 MXN</option>
+    </select>
+  </div>
+
+  <div class="productos-grid">
+    <div class="producto-card" data-precio="899">
+      <h3>Tenis retro</h3>
+      <p class="producto-precio">$899 MXN</p>
+      <p>Producto de demostración</p>
+    </div>
+
+    <div class="producto-card" data-precio="1299">
+      <h3>Tenis casuales</h3>
+      <p class="producto-precio">$1,299 MXN</p>
+      <p>Producto de demostración</p>
+    </div>
+
+    <div class="producto-card" data-precio="1899">
+      <h3>Tenis clásicos</h3>
+      <p class="producto-precio">$1,899 MXN</p>
+      <p>Producto de demostración</p>
+    </div>
+  </div>
 </section>
 
 
