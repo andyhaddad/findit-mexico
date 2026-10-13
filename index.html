@@ -98,5 +98,29 @@
         "Categoría seleccionada: " + category;
     }
   </script>
+
+<div style="text-align:center; margin:30px 0;">
+  <button onclick="buscarProductos()" style="
+    background:#302638;
+    color:white;
+    border:none;
+    border-radius:30px;
+    padding:16px 30px;
+    font-size:16px;
+    cursor:pointer;">
+    🔎 Buscar productos similares
+  </button>
+</div>
+
+<div id="resultados" style="text-align:center; padding:20px;">
+</div>
+
+<script>
+function buscarProductos() {
+  document.getElementById("resultados").innerHTML =
+    "<h2>Próximamente 💗</h2><p>Estamos preparando tus resultados.</p>";
+}
+</script>
+
 </body>
 </html>
