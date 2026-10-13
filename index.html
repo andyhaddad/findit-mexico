@@ -120,7 +120,32 @@ function choose(category) {
 </div>
 
 <script>
+
 function buscarProductos() {
+  const resultados = document.getElementById("resultados");
+
+  if (!categoriaSeleccionada) {
+    resultados.innerHTML =
+      "<p>💗 Primero selecciona una categoría.</p>";
+  } else {
+    const busqueda = encodeURIComponent(
+      categoriaSeleccionada + " mujer México"
+    );
+
+    resultados.innerHTML =
+      "<h2>¡Vamos de compras! 🛍️</h2>" +
+      "<p>Explora productos y compara precios.</p>" +
+      '<a href="https://www.google.com/search?tbm=shop&q=' +
+      busqueda +
+      '" target="_blank" rel="noopener noreferrer">Ver productos y precios →</a>';
+  }
+
+  resultados.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
   const resultados = document.getElementById("resultados");
 
   resultados.innerHTML =
