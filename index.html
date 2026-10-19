@@ -5,9 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f8f7f4">
-<meta name="description" content="FindIt México: descubre inspiración de moda y busca productos similares en tiendas online.">
+<meta name="description" content="FindIt México: descubre y busca moda de mujer.">
 <title>FindIt México — Encuentra tu estilo</title>
-
 <style>
 :root {
   --ink:#22211f;
@@ -29,8 +28,10 @@ button,input,select { font:inherit; }
 button { cursor:pointer; }
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; }
-.wrap { width:min(1240px,calc(100% - 48px)); margin:auto; }
-
+.wrap {
+  width:min(1240px,calc(100% - 48px));
+  margin:auto;
+}
 .announcement {
   background:#242320;
   color:#f5f3ef;
@@ -64,7 +65,6 @@ img { display:block; max-width:100%; }
   font-size:10px;
 }
 .nav-links a:hover { text-decoration:underline; }
-
 .hero {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -159,7 +159,6 @@ h1,h2,h3,p { margin-top:0; }
   font-size:13px;
   line-height:1.8;
 }
-
 .finder {
   background:white;
   border:1px solid var(--line);
@@ -184,25 +183,6 @@ h1,h2,h3,p { margin-top:0; }
   font-weight:700;
   margin:28px 0 12px;
 }
-.chips {
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-.chip {
-  border:1px solid #d7d1c9;
-  background:transparent;
-  color:var(--ink);
-  padding:12px 17px;
-  font-size:11px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-.chip.active,.chip:hover {
-  background:var(--ink);
-  color:white;
-  border-color:var(--ink);
-}
 .input,.select {
   border:1px solid #d7d1c9;
   background:white;
@@ -221,7 +201,6 @@ h1,h2,h3,p { margin-top:0; }
   line-height:1.8;
   margin:16px 0 0;
 }
-
 .catalog-section { background:#efede8; }
 .catalog-top {
   display:flex;
@@ -299,14 +278,6 @@ h1,h2,h3,p { margin-top:0; }
   min-height:35px;
   margin-bottom:14px;
 }
-.price { font-size:19px; font-weight:700; }
-.price-note {
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-  font-weight:400;
-  margin-top:6px;
-}
 .card .button {
   display:flex;
   margin-top:18px;
@@ -332,7 +303,6 @@ h1,h2,h3,p { margin-top:0; }
   max-width:750px;
   margin:20px auto 0;
 }
-
 .editorial {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -387,7 +357,6 @@ h1,h2,h3,p { margin-top:0; }
   line-height:1.8;
   max-width:490px;
 }
-
 @media(max-width:900px) {
   .hero-copy { padding:55px 35px; }
   .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -416,7 +385,6 @@ h1,h2,h3,p { margin-top:0; }
   .card-content { padding:13px; }
   .card h3 { font-size:18px; }
   .card p { font-size:11px; min-height:52px; }
-  .price { font-size:16px; }
   .card .button { font-size:9px; padding:12px 5px; }
   .editorial { grid-template-columns:1fr; }
   .editorial-image { min-height:310px; }
@@ -431,8 +399,9 @@ h1,h2,h3,p { margin-top:0; }
 </head>
 
 <body>
+
 <div class="announcement">
-  Encuentra inspiración. Compara opciones. Compra a tu manera.
+  Explora bolsas de tiendas en México
 </div>
 
 <nav class="nav">
@@ -449,7 +418,10 @@ h1,h2,h3,p { margin-top:0; }
   <div class="hero-copy">
     <span class="overline">FindIt México · Style discovery</span>
     <h1>Lo viste.<br>Lo amaste.<br><em>Encuéntralo.</em></h1>
-    <p>Tu inspiración merece más opciones. Explora prendas, zapatos y bolsas con una estética que se siente tuya.</p>
+    <p>
+      Explora una selección inicial de bolsas de mujer de
+      Zara y Mango. Busca y filtra sin salir de FindIt.
+    </p>
     <a class="button" href="#buscar">Descubrir mi estilo ↗</a>
   </div>
   <div class="hero-image">
@@ -461,47 +433,42 @@ h1,h2,h3,p { margin-top:0; }
 </header>
 
 <main>
+
 <section class="section" id="buscar">
   <div class="wrap">
     <div class="section-heading">
       <span class="overline">01 / Tu búsqueda</span>
       <h2>Encuentra tu próximo favorito.</h2>
-      <p>Describe lo que buscas y explora opciones de moda.</p>
+      <p>Busca dentro de nuestra primera selección de bolsas.</p>
     </div>
 
     <div class="finder">
       <span class="overline">FindIt Search</span>
       <h3>¿Qué estás buscando?</h3>
       <p class="help">
-        Escribe el producto que quieres encontrar.
-        Por ejemplo: «tenis Adidas blancos», «bolsa negra pequeña»
-        o «vestido largo beige».
+        Escribe un estilo, color, marca o nombre.
+        Por ejemplo: «bolsa de piel», «Zara» o «bandolera».
       </p>
 
-      <span class="label">Categoría</span>
-      <div class="chips" id="categories">
-        <button type="button" class="chip active" data-category="Todos">Todo</button>
-        <button type="button" class="chip" data-category="Ropa">Ropa</button>
-        <button type="button" class="chip" data-category="Zapatos">Zapatos</button>
-        <button type="button" class="chip" data-category="Bolsas">Bolsas</button>
-      </div>
+      <label class="label" for="searchText">
+        Buscar en FindIt
+      </label>
 
-      <label class="label" for="searchText">Describe lo que buscas</label>
       <input
         class="input"
         type="search"
         id="searchText"
-        placeholder="Ej. bolsa de hombro negra..."
+        placeholder="Ej. bolsa de piel, Mango, hombro..."
         maxlength="120"
       >
 
       <button type="button" class="button" id="searchButton">
-        Buscar productos similares ↗
+        Ver resultados en FindIt ↓
       </button>
 
       <p class="notice">
-        Tu búsqueda se abrirá en Google Shopping.
-        Los precios, productos y disponibilidad pertenecen a las tiendas externas.
+        Esta búsqueda filtra los productos de nuestro catálogo,
+        sin abrir Google. Por ahora hay cinco fichas de tiendas.
       </p>
     </div>
   </div>
@@ -509,25 +476,33 @@ h1,h2,h3,p { margin-top:0; }
 
 <section class="section catalog-section" id="catalogo">
   <div class="wrap">
+
     <div class="catalog-top">
       <div>
         <span class="overline">02 / The FindIt Edit</span>
-        <h2>La selección.</h2>
+        <h2>Bolsas seleccionadas.</h2>
         <p id="resultCount"></p>
       </div>
 
       <div class="filters">
-        <select class="select" id="priceFilter">
-          <option value="all">Todos los precios</option>
-          <option value="500">Hasta $500 MXN</option>
-          <option value="1000">Hasta $1,000 MXN</option>
-          <option value="1500">Hasta $1,500 MXN</option>
-          <option value="2000">Hasta $2,000 MXN</option>
+        <select
+          class="select"
+          id="storeFilter"
+          aria-label="Filtrar tienda"
+        >
+          <option value="all">Todas las tiendas</option>
+          <option value="Zara">Zara</option>
+          <option value="Mango">Mango</option>
         </select>
-        <select class="select" id="sortFilter">
+
+        <select
+          class="select"
+          id="sortFilter"
+          aria-label="Ordenar productos"
+        >
           <option value="featured">Selección editorial</option>
-          <option value="low">Precio: menor a mayor</option>
-          <option value="high">Precio: mayor a menor</option>
+          <option value="az">Nombre: A a Z</option>
+          <option value="za">Nombre: Z a A</option>
         </select>
       </div>
     </div>
@@ -535,20 +510,15 @@ h1,h2,h3,p { margin-top:0; }
     <div class="grid" id="products"></div>
 
     <div class="catalog-bottom">
-      <a
-        class="button button-outline"
-        href="https://www.google.com/search?tbm=shop&q=moda+mujer+Mexico"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Explorar tiendas ↗
-      </a>
       <p>
-        Galería editorial de demostración.
-        Las fotografías son ilustrativas y los precios son ficticios.
-        Los enlaces abren búsquedas externas de productos reales.
+        Selección manual de fichas de Zara y Mango.
+        Las fotos son ilustrativas y NO representan necesariamente
+        el producto enlazado. No mostramos precios porque no
+        están verificados en tiempo real. Los productos pueden
+        agotarse o cambiar de dirección.
       </p>
     </div>
+
   </div>
 </section>
 
@@ -560,16 +530,20 @@ h1,h2,h3,p { margin-top:0; }
       loading="lazy"
     >
   </div>
+
   <div class="editorial-copy">
     <span class="overline">Less searching. More style.</span>
     <h2>El estilo no tiene que costar más.</h2>
     <p>
-      Descubre inspiración y encuentra opciones en tiendas online.
-      Estamos construyendo una forma más sencilla de explorar la moda.
+      Explora nuestro catálogo inicial de bolsas y visita
+      directamente la tienda cuando algo te guste.
     </p>
-    <a class="button button-outline" href="#buscar">Volver a explorar ↗</a>
+    <a class="button button-outline" href="#buscar">
+      Volver a explorar ↗
+    </a>
   </div>
 </section>
+
 </main>
 
 <footer class="footer">
@@ -580,8 +554,8 @@ h1,h2,h3,p { margin-top:0; }
     </div>
     <div>
       <p>
-        FindIt México es un prototipo de inspiración y búsqueda de moda.
-        Las compras se realizan en sitios externos.
+        FindIt México es un catálogo de prueba.
+        Las compras se realizan en las tiendas externas.
       </p>
       <small>© <span id="year"></span> FindIt México</small>
     </div>
@@ -593,114 +567,78 @@ h1,h2,h3,p { margin-top:0; }
 
 const catalog = [
   {
-    name:"Tenis retro",
-    category:"Zapatos",
-    price:899,
-    description:"Inspiración urbana con un toque clásico.",
-    tags:"tenis retro sneakers casuales blancos",
-    image:"photo-1542291026-7eec264c27ff"
-  },
-  {
-    name:"Sneakers esenciales",
-    category:"Zapatos",
-    price:1299,
-    description:"Siluetas versátiles para todos los días.",
-    tags:"tenis sneakers deportivos casuales",
-    image:"photo-1525966222134-fcfa99b8ae77"
-  },
-  {
-    name:"Zapatos de temporada",
-    category:"Zapatos",
-    price:1899,
-    description:"Un detalle que transforma el look.",
-    tags:"zapatos tacones elegantes temporada",
-    image:"photo-1543163521-1bf539c55dd2"
-  },
-  {
-    name:"Look minimalista",
-    category:"Ropa",
-    price:749,
-    description:"Prendas sencillas con mucha personalidad.",
-    tags:"ropa vestido minimalista outfit",
-    image:"photo-1483985988355-763728e1935b"
-  },
-  {
-    name:"Estilo editorial",
-    category:"Ropa",
-    price:1199,
-    description:"Inspiración para un armario atemporal.",
-    tags:"ropa blazer saco editorial",
-    image:"photo-1539109136881-3be0616acf4b"
-  },
-  {
-    name:"Outfit urbano",
-    category:"Ropa",
-    price:649,
-    description:"Combinaciones relajadas y modernas.",
-    tags:"ropa jeans mezclilla urbano",
-    image:"photo-1515886657613-9f3515b0c78f"
-  },
-  {
-    name:"Bolsa de hombro",
-    category:"Bolsas",
-    price:999,
-    description:"Un accesorio para acompañarte siempre.",
-    tags:"bolsa hombro handbag cuero",
+    name:"Bolsa de hombro con cadena",
+    store:"Zara",
+    type:"Hombro",
+    tags:"bolsa hombro cadena shoulder",
+    url:"https://www.zara.com/mx/es/bolsa-de-hombro-detalle-cadena-p16047810.html",
     image:"photo-1548036328-c9fa89d128fa"
   },
   {
-    name:"Bolsa elegante",
-    category:"Bolsas",
-    price:499,
-    description:"Detalles que elevan cualquier conjunto.",
-    tags:"bolsa tote elegante negra",
+    name:"Bolsa shoulder con cadenas",
+    store:"Zara",
+    type:"Hombro",
+    tags:"bolsa shoulder marron cadenas hombro",
+    url:"https://www.zara.com/mx/es/bolsa-shoulder-cadenas-p11151830.html",
     image:"photo-1584917865442-de89df76afd3"
   },
   {
-    name:"Bolsa para diario",
-    category:"Bolsas",
-    price:1699,
-    description:"Funcionalidad con inspiración de moda.",
-    tags:"bolsa mochila backpack diario",
+    name:"Bolsa bandolera pequeña",
+    store:"Mango",
+    type:"Bandolera",
+    tags:"bolsa bandolera pequena cuero cruzada",
+    url:"https://shop.mango.com/mx/es/p/mujer/bolsos/bandoleras/bolso-bandolera-pequeno_27054049",
+    image:"photo-1547949003-9792a18a2601"
+  },
+  {
+    name:"Bolsa bandolera de piel",
+    store:"Mango",
+    type:"Bandolera",
+    tags:"bolsa bandolera piel chocolate contraste",
+    url:"https://shop.mango.com/mx/es/p/mujer/bolsos/bandoleras/bolso-bandolera-piel-contraste/37035857/32/00",
     image:"photo-1553062407-98eeb64c6a62"
+  },
+  {
+    name:"Bolsa de hombro de piel",
+    store:"Zara",
+    type:"Hombro",
+    tags:"bolsa hombro piel bronce",
+    url:"https://www.zara.com/mx/es/bolsa-de-hombro-piel-p16453710.html",
+    image:"photo-1566150905458-1bf1fc113f0d"
   }
 ];
 
 const $ = id => document.getElementById(id);
-
-const money = n => new Intl.NumberFormat("es-MX",{
-  style:"currency",
-  currency:"MXN",
-  maximumFractionDigits:0
-}).format(n);
 
 const normalize = s =>
   s.toLowerCase()
    .normalize("NFD")
    .replace(/[\u0300-\u036f]/g,"");
 
-const shopping = s =>
-  "https://www.google.com/search?tbm=shop&q=" +
-  encodeURIComponent(s + " comprar México");
-
-let category = "Todos";
-
 function render() {
-  const max = $("priceFilter").value;
+  const search = normalize($("searchText").value.trim());
+  const store = $("storeFilter").value;
   const sort = $("sortFilter").value;
 
-  const list = catalog.filter(p =>
-    (category === "Todos" || p.category === category) &&
-    (max === "all" || p.price <= Number(max))
+  const items = catalog.filter(p =>
+    (store === "all" || p.store === store) &&
+    normalize(
+      [p.name,p.store,p.type,p.tags].join(" ")
+    ).includes(search)
   );
 
-  if (sort === "low") list.sort((a,b) => a.price-b.price);
-  if (sort === "high") list.sort((a,b) => b.price-a.price);
+  if (sort === "az") {
+    items.sort((a,b) => a.name.localeCompare(b.name,"es"));
+  }
+
+  if (sort === "za") {
+    items.sort((a,b) => b.name.localeCompare(a.name,"es"));
+  }
 
   const grid = $("products");
   grid.replaceChildren();
 
-  for (const p of list) {
+  items.forEach(p => {
     const card = document.createElement("article");
     card.className = "card";
 
@@ -712,12 +650,12 @@ function render() {
       "https://images.unsplash.com/" +
       p.image +
       "?auto=format&fit=crop&w=760&q=80";
-    img.alt = "Fotografía editorial ilustrativa";
+    img.alt = "Imagen ilustrativa de bolsa";
     img.loading = "lazy";
 
     const tag = document.createElement("span");
     tag.className = "photo-tag";
-    tag.textContent = "Inspiración";
+    tag.textContent = "Foto ilustrativa";
 
     photo.append(img,tag);
 
@@ -726,88 +664,60 @@ function render() {
 
     const cat = document.createElement("span");
     cat.className = "card-category";
-    cat.textContent = p.category;
+    cat.textContent = p.store + " · " + p.type;
 
     const title = document.createElement("h3");
     title.textContent = p.name;
 
     const desc = document.createElement("p");
-    desc.textContent = p.description;
-
-    const price = document.createElement("div");
-    price.className = "price";
-    price.textContent = money(p.price);
-
-    const note = document.createElement("small");
-    note.className = "price-note";
-    note.textContent = "Precio ilustrativo";
-    price.appendChild(note);
+    desc.textContent =
+      "Ficha de tienda · Precio y disponibilidad por confirmar en el sitio oficial.";
 
     const link = document.createElement("a");
     link.className = "button";
-    link.href = shopping(p.name);
+    link.href = p.url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = "Buscar similares ↗";
+    link.textContent = "Ver en " + p.store + " ↗";
 
-    info.append(cat,title,desc,price,link);
+    info.append(cat,title,desc,link);
     card.append(photo,info);
-    grid.appendChild(card);
-  }
+    grid.append(card);
+  });
 
-  if (!list.length) {
+  if (!items.length) {
     const empty = document.createElement("div");
     empty.className = "empty";
-    empty.textContent = "No hay ejemplos con estos filtros.";
-    grid.appendChild(empty);
+    empty.textContent =
+      "No encontramos coincidencias en estas cinco bolsas. Prueba con otra palabra o tienda.";
+    grid.append(empty);
   }
 
   $("resultCount").textContent =
-    list.length + " ideas de estilo · catálogo de demostración";
+    items.length + " de " + catalog.length +
+    " fichas en nuestro catálogo";
 }
 
-document.querySelectorAll(".chip").forEach(button => {
-  button.addEventListener("click", () => {
-    category = button.dataset.category;
-
-    document.querySelectorAll(".chip").forEach(item => {
-      item.classList.toggle("active",item === button);
-    });
-
-    render();
-  });
-});
-
-$("priceFilter").addEventListener("change",render);
-$("sortFilter").addEventListener("change",render);
-
 $("searchButton").addEventListener("click", () => {
-  const text = $("searchText").value.trim();
+  render();
+  $("catalogo").scrollIntoView({behavior:"smooth"});
+});
 
-  if (!text) {
-    $("searchText").focus();
-    $("searchText").placeholder =
-      "Escribe qué producto quieres encontrar";
-    return;
+$("searchText").addEventListener("input",render);
+
+$("searchText").addEventListener("keydown",e => {
+  if (e.key === "Enter") {
+    $("searchButton").click();
   }
-
-  const query =
-    (category === "Todos" ? "" : category + " ") + text;
-
-  window.open(
-    shopping(query),
-    "_blank",
-    "noopener,noreferrer"
-  );
 });
 
-$("searchText").addEventListener("keydown", event => {
-  if (event.key === "Enter") $("searchButton").click();
-});
+$("storeFilter").addEventListener("change",render);
+$("sortFilter").addEventListener("change",render);
 
 $("year").textContent = new Date().getFullYear();
 
 render();
 </script>
+
 </body>
 </html>
