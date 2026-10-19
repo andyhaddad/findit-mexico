@@ -362,7 +362,7 @@ const card=node('article','card');
 const photo=node('div','photo');
 const img=node('img');
 
-img.src=`https://images.unsplash.com/${p.image}?auto=format&fit=crop&w=750&q=80`;
+img.src=p.image.startsWith('photo-')?`https://images.unsplash.com/${p.image}?auto=format&fit=crop&w=750&q=80`:p.image;
 img.alt='Imagen de referencia de un bolso; no representa el artículo exacto';
 img.loading='lazy';
 
